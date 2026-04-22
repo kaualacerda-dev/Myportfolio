@@ -1,0 +1,20 @@
+.home {
+  padding: 3rem 0;
+}
+
+.home__hero {
+  padding: 2rem;
+  border: 1px solid #d4d4d8;
+  border-radius: 1rem;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .home {
+    padding: 5rem 0;
+  }
+
+  .home__hero {
+    padding: 3rem;
+  }
+}
