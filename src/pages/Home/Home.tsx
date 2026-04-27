@@ -28,7 +28,7 @@ function Home() {
                   Eu sou
                 </span>
                 <h1 className="mt-2 text-5xl font-black leading-none text-violet-200 sm:text-7xl md:text-[7rem]">
-                  {"kau\u00e3"}
+                  {"Kau\u00e3"}
                 </h1>
                 <p className="mt-5 text-xl font-semibold text-fuchsia-300 sm:text-2xl">
                   Desenvolvedor Full Stack
