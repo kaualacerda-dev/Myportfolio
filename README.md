@@ -1,1 +1,1 @@
-Projeto Simples feito apenas para apresentação profissional.
+Projeto simples desenvolvido para apresentação profissional.
