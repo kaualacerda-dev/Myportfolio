@@ -1,4 +1,4 @@
-import visaoGeral from "../../assets/img/visaoGeral.png";
+import HomeImage from "../../assets/img/Alay-Admin/Home.png";
 import frontHomeImage from "../../assets/img/Alay-front/frontHome.png";
 
 const stacks = [
@@ -85,7 +85,7 @@ function Home() {
           <article className="mt-10 flex flex-col overflow-hidden rounded-[2rem] border border-violet-500/10 bg-[#12091d] md:flex-row">
             <div className="flex w-full md:w-1/2">
               <img
-                src={visaoGeral}
+                src={HomeImage}
                 alt="Tela de login do projeto painel administrativo"
                 className="h-full w-full object-cover"
               />

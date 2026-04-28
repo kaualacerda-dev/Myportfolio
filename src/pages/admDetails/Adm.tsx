@@ -1,8 +1,8 @@
 import { useState } from "react";
-import estoqueImage from "../../assets/img/estoque.png";
-import loginImage from "../../assets/img/login.png";
-import registroImage from "../../assets/img/registro.png";
-import visaoGeralImage from "../../assets/img/visaoGeral.png";
+import estoqueImage from "../../assets/img/Alay-Admin/Estoque.png";
+import loginImage from "../../assets/img/Alay-Admin/login.png";
+import registroImage from "../../assets/img/Alay-Admin/Cadatro.png";
+import HomeImage from "../../assets/img/Alay-Admin/Home.png";
 
 const screens = [
   {
@@ -14,7 +14,7 @@ const screens = [
     title: "Home",
     description:
       "Página principal do painel, com uma visão geral da loja. Nela é possível visualizar metas, produtos em estoque e outras informações relevantes.",
-    image: visaoGeralImage,
+    image: HomeImage,
   },
   {
     title: "Estoque",
