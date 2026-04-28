@@ -28,7 +28,7 @@ function Home() {
                   Eu sou
                 </span>
                 <h1 className="mt-2 text-5xl font-black leading-none text-violet-200 sm:text-7xl md:text-[7rem]">
-                  {"kau\u00e3"}
+                  {"Kau\u00e3"}
                 </h1>
                 <p className="mt-5 text-xl font-semibold text-fuchsia-300 sm:text-2xl">
                   Desenvolvedor Full Stack
@@ -36,8 +36,8 @@ function Home() {
               </div>
 
               <p className="mt-8 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base">
-                Construindo interfaces e aplicações completas com foco em
-                simplicidade, performance e boa experiencia para o usuário.
+                Desenvolvimento de interfaces e aplicações completas com foco
+                em simplicidade, performance e boa experiência para o usuário.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
@@ -63,7 +63,7 @@ function Home() {
                   download
                   className="flex items-center justify-center rounded-full border border-violet-500/20 px-6 py-3 text-sm font-semibold text-zinc-100 transition hover:border-violet-300/40 hover:text-violet-200"
                 >
-                  Baixar Curriculo
+                  Baixar currículo
                 </a>
               </div>
             </div>
@@ -96,9 +96,9 @@ function Home() {
                 Painel Administrativo
               </h3>
               <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-300 sm:text-base">
-                Sistema desenvolvido para a gestao interna de uma loja, com foco
-                em login administrativo, acompanhamento operacional, cadastro,
-                estoque de produtos e organizacao de processos do dia a dia.
+                Sistema desenvolvido para a gestão interna de uma loja, com foco
+                em acesso administrativo, acompanhamento operacional, cadastro,
+                controle de estoque e organização dos processos do dia a dia.
               </p>
               <a
                 href="#/adm-details"
@@ -123,10 +123,10 @@ function Home() {
                 Alay (Front-end da loja)
               </h3>
               <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-300 sm:text-base">
-                Interface da loja desenvolvida para apresentar os produtos ao
-                cliente, com telas de home, listagem, busca, carrinho e login,
-                mantendo a experiencia de compra conectada ao restante do
-                sistema Alay.
+                Interface da loja desenvolvida para apresentar produtos aos
+                clientes, com telas de página inicial, listagem, busca, carrinho
+                e login, mantendo a experiência de compra integrada ao restante
+                do sistema Alay.
               </p>
               <a
                 href="#/alay-front-details"

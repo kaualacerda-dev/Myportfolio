@@ -1,3 +1,4 @@
+import { useState } from "react";
 import frontCartImage from "../../assets/img/Alay-front/frontCart.png";
 import frontHomeImage from "../../assets/img/Alay-front/frontHome.png";
 import frontHomeProductsImage from "../../assets/img/Alay-front/frontHomeProducts.png";
@@ -8,42 +9,47 @@ import frontProductDetails from "../../assets/img/Alay-front/frontProductDetails
 const screens = [
   {
     title: "Home",
-    description: "Pagina de apresentação da marca.",
+    description: "Página de apresentação da marca.",
     image: frontHomeImage,
   },
   {
     title: "Produtos",
     description:
-      "Sessão de produtos na pagina home, com filtros de acordo com a categoria do produto.",
+      "Seção de produtos na página inicial, com filtros de acordo com a categoria do produto.",
     image: frontHomeProductsImage,
   },
   {
     title: "Busca",
     description:
-      "Sistema de procura funcional de acordo com o nome dos produtos.",
+      "Sistema de busca funcional com base no nome dos produtos.",
     image: frontSearchImage,
   },
   {
     title: "Detalhes dos produtos",
     description:
-      "Pagina de detalhes, para visualizar melhor as informações do produto, com botão para adicionar ao carrinho.",
+      "Página de detalhes para apresentar melhor as informações do produto, com botão para adicioná-lo ao carrinho.",
     image: frontProductDetails,
   },
   {
     title: "Carrinho",
     description:
-      "Carrinho com a quantidade de produto escolhida e com total do valor somando todos os produtos.",
+      "Carrinho com a quantidade de produtos escolhida e o valor total calculado a partir de todos os itens.",
     image: frontCartImage,
   },
   {
     title: "Login",
     description:
-      "Pagina de login, para logar caso tenha conta, com botão direcional para registro caso não tenha conta.",
+      "Página de login para usuários já cadastrados, com botão de direcionamento para registro de novos usuários.",
     image: frontLoginImage,
   },
 ];
 
 function AlayFront() {
+  const [focusedScreen, setFocusedScreen] = useState<{
+    title: string;
+    image: string;
+  } | null>(null);
+
   return (
     <main className="flex min-h-screen flex-col bg-[#07030d] text-violet-50">
       <section className="flex flex-col bg-[radial-gradient(circle_at_top,_rgba(109,40,217,0.18),_transparent_34%),linear-gradient(180deg,_#07030d_0%,_#0d0718_55%,_#140a22_100%)] px-5 py-10 sm:px-8 lg:px-12">
@@ -63,12 +69,12 @@ function AlayFront() {
               Alay (Front-end da loja)
             </h1>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-300 sm:text-base">
-              Projeto feito em conjunto com o{" "}
+              Projeto desenvolvido em conjunto com o{" "}
               <a
                 href="https://github.com/kaualacerda-dev/Alay-Admin"
                 className="text-blue-400"
               >
-                painel adiminstrativo
+                painel administrativo
               </a>
               .<br /> Os dois utilizam o mesmo{" "}
               <a
@@ -78,11 +84,12 @@ function AlayFront() {
                 backend.
               </a>
               <br />
-              O projeto foi criado com Next.js e foi feito para exibir as informações dos produtos criado pelo
-              painel, com foco na compra e acesso de usuários. 
+              O projeto foi criado com Next.js para exibir as informações dos
+              produtos cadastrados pelo painel, com foco na experiência de
+              compra e no acesso dos usuários.
             </p>
             <p className="text-red-500">
-              A marca Alay foi apenas uma inspiração pessoal, não possui vinculo com uma empresa real, pelo menos não do meu conhecimento!
+              A Alay é uma marca fictícia e não possui qualquer vínculo com uma empresa real.
             </p>
             <a
               href="https://github.com/kaualacerda-dev/Alay-front"
@@ -92,18 +99,29 @@ function AlayFront() {
             </a>
           </div>
 
-          <div className="mt-12 flex flex-col gap-5">
+          <p className="mt-10 text-sm leading-7 text-zinc-300 sm:text-base">
+            Clique nas imagens para ampliá-las e visualizar melhor os detalhes.
+          </p>
+
+          <div className="mt-5 flex flex-col gap-5">
             {screens.map((screen) => (
               <article
                 key={screen.title}
                 className="flex flex-col overflow-hidden rounded-[2rem] border border-violet-500/10 bg-[#12091d]"
               >
                 <div className="flex w-full justify-center bg-[#0f0818] px-4 py-4 sm:px-6">
-                  <img
-                    src={screen.image}
-                    alt={`Tela ${screen.title} do projeto Alay front-end da loja`}
-                    className="w-full max-w-3xl rounded-[1.25rem] object-cover"
-                  />
+                  <button
+                    type="button"
+                    onClick={() => setFocusedScreen(screen)}
+                    className="w-full max-w-3xl cursor-zoom-in"
+                    aria-label={`Ampliar tela ${screen.title} do projeto Alay front-end da loja`}
+                  >
+                    <img
+                      src={screen.image}
+                      alt={`Tela ${screen.title} do projeto Alay front-end da loja`}
+                      className="w-full rounded-[1.25rem] object-cover"
+                    />
+                  </button>
                 </div>
 
                 <div className="flex flex-col px-5 py-5 sm:px-6">
@@ -119,6 +137,21 @@ function AlayFront() {
           </div>
         </div>
       </section>
+
+      {focusedScreen && (
+        <button
+          type="button"
+          onClick={() => setFocusedScreen(null)}
+          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/85 p-4 sm:p-8"
+          aria-label={`Fechar tela ${focusedScreen.title} ampliada`}
+        >
+          <img
+            src={focusedScreen.image}
+            alt={`Tela ${focusedScreen.title} do projeto Alay front-end da loja ampliada`}
+            className="max-h-[90vh] w-full max-w-6xl rounded-[1.25rem] object-contain"
+          />
+        </button>
+      )}
     </main>
   );
 }
